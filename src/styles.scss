@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* COMMON FORM CLASSES START */
+@layer components {
+  .controls-group-flex-std {
+    @apply flex justify-items-start flex-wrap w-full;
+  }
+
+  .input-control-flex-10 {
+    @apply flex-grow-0 flex-shrink basis-full mr-0 md:basis-[10%] md:mr-[1.5%];
+  }
+
+  .input-control-flex-20 {
+    @apply flex-grow-0 flex-shrink basis-full mr-0 md:basis-[20%] md:mr-[1.5%];
+  }
+
+  .input-control-flex-30 {
+    @apply flex-grow-0 flex-shrink basis-full mr-0 md:basis-[30%] md:mr-[1.5%];
+  }
+
+  .input-control-flex-40 {
+    @apply flex-grow-0 flex-shrink basis-full mr-0 md:basis-[40%] md:mr-[1.5%];
+  }
+
+  .input-control-flex-50 {
+    @apply flex-grow-0 flex-shrink basis-full mr-0 md:basis-[50%] md:mr-[1.5%];
+  }
+
+  .input-control-flex-60 {
+    @apply flex-grow-0 flex-shrink basis-full mr-0 md:basis-[60%] md:mr-[1.5%];
+  }
+
+  .input-control-flex-70 {
+    @apply flex-grow-0 flex-shrink basis-full mr-0 md:basis-[70%] md:mr-[1.5%];
+  }
+
+  .input-control-flex-80 {
+    @apply flex-grow-0 flex-shrink basis-full mr-0 md:basis-[80%] md:mr-[1.5%];
+  }
+
+  .input-control-flex-90 {
+    @apply flex-grow-0 flex-shrink basis-full mr-0 md:basis-[90%] md:mr-[1.5%];
+  }
+
+  .input-control-flex-100 {
+    @apply flex-grow-0 flex-shrink basis-full;
+  }
+}
+
+/* COMMON FORM CLASSES END */

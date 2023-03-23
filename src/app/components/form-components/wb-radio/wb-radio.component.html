@@ -1,0 +1,20 @@
+<mat-radio-group
+  [formControl]="formControl"
+  [formlyAttributes]="field"
+  [class]="classes"
+>
+  <mat-label *ngIf="label">{{ label }}</mat-label>
+  <mat-radio-button
+    *ngFor="let radioOption of radioOptions"
+    [value]="radioOption.value"
+    class="mr-0 md:mr-3"
+    color="primary"
+    >{{ radioOption.label }}</mat-radio-button
+  >
+  <mat-error>
+    <formly-validation-message
+      *ngIf="showError"
+      [field]="field"
+    ></formly-validation-message>
+  </mat-error>
+</mat-radio-group>

@@ -1,0 +1,23 @@
+<mat-form-field appearance="fill" [class]="classes">
+  <mat-label>{{ label }}</mat-label>
+  <input
+    matInput
+    [formControl]="formControl"
+    [formlyAttributes]="field"
+    [min]="minDate"
+    [max]="maxDate"
+    [matDatepicker]="datepicker"
+    [attr.disabled]="disabled"
+  />
+  <mat-hint align="start">MM/DD/YYYY</mat-hint>
+  <mat-hint align="end">{{ formattedDate$ | async }}</mat-hint>
+  <mat-datepicker-toggle
+    matIconSuffix
+    [for]="datepicker"
+    matTooltip="Open calendar"
+  ></mat-datepicker-toggle>
+  <mat-datepicker #datepicker> </mat-datepicker>
+  <mat-error>
+    <formly-validation-message [field]="field"></formly-validation-message>
+  </mat-error>
+</mat-form-field>

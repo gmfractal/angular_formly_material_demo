@@ -1,0 +1,32 @@
+<div class="w-full">
+  <div class="flex flex-nowrap">
+    <span class="flex-grow flex-shrink basis-1/6 text-center my-auto">
+      {{ minRange }}</span
+    >
+    <mat-slider
+      class="flex-grow flex-shrink basis-4/6"
+      [attr.disabled]="disabled"
+      [max]="maxRange"
+      [min]="minRange"
+      [step]="stepSize"
+      [discrete]="showThumbLabel"
+      [showTickMarks]="showTickMarks"
+    >
+      <input
+        matSliderThumb
+        [formControl]="formControl"
+        [formlyAttributes]="field"
+      />
+    </mat-slider>
+    <span class="flex-grow flex-shrink basis-1/6 text-center my-auto"
+      >{{ maxRange }}
+    </span>
+  </div>
+
+  <mat-error>
+    <formly-validation-message
+      *ngIf="showError"
+      [field]="field"
+    ></formly-validation-message>
+  </mat-error>
+</div>

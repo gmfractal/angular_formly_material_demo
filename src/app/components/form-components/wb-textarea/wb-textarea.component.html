@@ -1,0 +1,18 @@
+<mat-form-field appearance="fill" [class]="classes">
+  <mat-label>{{ label }}</mat-label>
+  <textarea
+    matInput
+    cdkTextareaAutosize
+    #autosize="cdkTextareaAutosize"
+    [cdkAutosizeMinRows]="minRows"
+    [cdkAutosizeMaxRows]="maxRows"
+    [formControl]="formControl"
+    [formlyAttributes]="field"
+    [maxLength]="maxLength"
+    [placeholder]="placeholder"
+    [attr.disabled]="disabled"
+  ></textarea>
+  <mat-error>
+    <formly-validation-message [field]="field"></formly-validation-message>
+  </mat-error>
+</mat-form-field>

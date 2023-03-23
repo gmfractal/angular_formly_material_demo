@@ -1,0 +1,22 @@
+<div [class]="classes">
+  <div class="flex items-center w-full">
+    <h3 *ngIf="heading" class="flex-wrapper-heading">
+      {{ heading }}
+    </h3>
+    <button
+      *ngIf="showHelpBtn"
+      mat-icon-button
+      type="button"
+      color="primary"
+      matTooltip="{{ helpBtnLabel }}"
+      [attr.aria-label]="helpBtnLabel"
+      (click)="handleHelpBtnClick()"
+    >
+      <mat-icon>help_outline</mat-icon>
+    </button>
+  </div>
+  <div *ngIf="descriptions" class="w-full">
+    <p *ngFor="let description of descriptions">{{ description }}</p>
+  </div>
+  <ng-container #fieldComponent></ng-container>
+</div>

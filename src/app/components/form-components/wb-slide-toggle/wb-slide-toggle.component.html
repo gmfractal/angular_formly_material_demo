@@ -1,0 +1,15 @@
+<mat-slide-toggle
+  [formControl]="formControl"
+  [formlyAttributes]="field"
+  [attr.disabled]="disabled"
+  [labelPosition]="labelPosition"
+  color="primary"
+>
+  {{ label }}
+</mat-slide-toggle>
+<mat-error>
+  <formly-validation-message
+    *ngIf="showError"
+    [field]="field"
+  ></formly-validation-message>
+</mat-error>

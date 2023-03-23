@@ -1,0 +1,81 @@
+<div [class]="classes">
+  <div class="flex items-center w-full">
+    <h3 *ngIf="heading" class="array-renderer-heading">
+      {{ heading }}
+    </h3>
+    <button
+      *ngIf="showHelpBtn"
+      mat-icon-button
+      type="button"
+      color="primary"
+      matTooltip="{{ helpBtnLabel }}"
+      [attr.aria-label]="helpBtnLabel"
+      (click)="handleHelpBtnClick()"
+    >
+      <mat-icon>help_outline</mat-icon>
+    </button>
+  </div>
+  <div *ngIf="descriptions" class="w-full">
+    <p *ngFor="let description of descriptions">{{ description }}</p>
+  </div>
+
+  <div
+    class="w-full"
+    *ngFor="let field of fieldGroup; let index = index; let first = first"
+  >
+    <mat-divider class="w-full py-3" *ngIf="first"></mat-divider>
+
+    <div
+      [ngClass]="{
+        flex: true,
+        'flex-nowrap': true,
+        'items-center': true,
+        'mb-4': true,
+        'justify-between': controlGroupLabel,
+        'justify-end': !controlGroupLabel
+      }"
+    >
+      <h3
+        *ngIf="controlGroupLabel"
+        class="flex-shrink grow-0 basis-auto control-group-label"
+      >
+        {{ controlGroupLabel }}{{ index + 1 }}
+      </h3>
+      <div class="flex-shrink grow-0 basis-auto">
+        <button
+          mat-icon-button
+          type="button"
+          color="warn"
+          matTooltip="{{ removeBtnLabel }}"
+          [attr.aria-label]="removeBtnLabel"
+          (click)="handleRemoveBtnClick(index)"
+        >
+          <mat-icon>highlight_off</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="flex flex-nowrap w-full">
+      <div class="flex-shrink flex-grow basis-auto">
+        <formly-field class="" [field]="field"></formly-field>
+      </div>
+    </div>
+
+    <mat-divider class="w-full py-3"></mat-divider>
+  </div>
+
+  <div class="mx-auto">
+    <button
+      mat-button
+      type="button"
+      color="primary"
+      matTooltip="{{ addBtnLabel }}"
+      [attr.aria-label]="addBtnLabel"
+      (click)="handleAddBtnClick()"
+      [disabled]="disableAddBtn"
+    >
+      <mat-icon>add_circle_outline</mat-icon>
+      <span>{{ !disableAddBtn ? addBtnLabel : exceededArrayLimitMsg }}</span>
+    </button>
+  </div>
+</div>

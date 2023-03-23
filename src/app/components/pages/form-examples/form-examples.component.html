@@ -1,0 +1,14 @@
+<div class="w-[80vw] mx-auto">
+  <h1>Form Components Examples</h1>
+
+  <div>
+    <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
+  </div>
+
+  <div>
+    <h2>Data in model</h2>
+    <pre>
+      {{ model | json }}
+    </pre>
+  </div>
+</div>

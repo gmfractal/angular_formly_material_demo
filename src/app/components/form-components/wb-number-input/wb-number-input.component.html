@@ -1,0 +1,18 @@
+<mat-form-field appearance="fill" [class]="classes">
+  <mat-label>{{ label }}</mat-label>
+  <input
+    matInput
+    type="text"
+    [formControl]="formControl"
+    [formlyAttributes]="field"
+    [placeholder]="placeholder"
+    [attr.disabled]="disabled"
+    [maxLength]="maxLength"
+    (focus)="handleFocus($event)"
+    (blur)="handleBlur($event)"
+    (input)="handleInput($event)"
+  />
+  <mat-error>
+    <formly-validation-message [field]="field"></formly-validation-message>
+  </mat-error>
+</mat-form-field>
