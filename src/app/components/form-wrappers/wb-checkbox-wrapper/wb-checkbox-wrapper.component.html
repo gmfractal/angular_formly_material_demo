@@ -1,14 +1,18 @@
-<div class="wb-checkbox-wrapper flex flex-wrap w-full mb-6">
-  <h3 class="wb-checkbox-wrapper-label" *ngIf="label">{{ label }}</h3>
-  <div class="wb-checkbox-wrapper-body">
-    <!-- *ngFor loop can be used to render all form controls, or use '<ng-container #fieldComponent></ng-container>' to do the same thing -->
-    <formly-field
-      *ngFor="let formField of field.fieldGroup"
-      [field]="formField"
-      class="mr-0 md:mr-3"
-    ></formly-field>
+<div class="mb-5">
+  <div class="wb-checkbox-wrapper flex flex-wrap w-full">
+    <h3 class="wb-checkbox-wrapper-label" *ngIf="label">{{ label }}</h3>
+    <div class="wb-checkbox-wrapper-body">
+      <!-- *ngFor loop can be used to render all form controls, or use '<ng-container #fieldComponent></ng-container>' to do the same thing -->
+      <formly-field
+        *ngFor="let formField of field.fieldGroup"
+        [field]="formField"
+        class="mr-0 md:mr-3"
+      ></formly-field>
+    </div>
   </div>
-  <mat-error>
-    <formly-validation-message [field]="field"></formly-validation-message>
-  </mat-error>
+  <div>
+    <mat-error>
+      <formly-validation-message [field]="field"></formly-validation-message>
+    </mat-error>
+  </div>
 </div>
